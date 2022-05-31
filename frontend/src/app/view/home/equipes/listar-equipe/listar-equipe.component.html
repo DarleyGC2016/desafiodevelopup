@@ -1,0 +1,51 @@
+
+<app-comum-button [nome]="textNovo"
+              [color]="corNovo"
+              [caminho]="origem">
+</app-comum-button>
+
+<table class="table table-striped" *ngIf="carregarLoading; else carregando">
+    <thead>
+      <tr>
+        <th scope="col">Nome</th>
+        <th scope="col">Editar</th>
+        <th scope="col">Excluir</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let equipe of listaEquipe"> 
+         <td>{{equipe.nome}}</td>
+         <td>
+          <app-button-id
+                    [id] = "equipe.id"
+                    [nome] = "textEditar"
+                    [color] =  "corEditar"
+                    [caminho] = "rotaEditar"
+                  > 
+          </app-button-id>
+         </td>
+         <td>
+            <app-button-id
+                  [id]  = "equipe.id"
+                  [nome] = "textExcluir"
+                  [color] =  "corExcluir"                  
+            > 
+           </app-button-id>
+         </td>
+      </tr>
+      
+    </tbody>
+  </table>
+  
+  <ng-template #carregando >
+    <div id="preloader">
+      <div class="inner">
+        carregando...
+         <div class="bolas">
+            <div></div>
+            <div></div>
+            <div></div>                    
+         </div>
+      </div>
+  </div>
+  </ng-template>
