@@ -82,26 +82,6 @@ describe('CadastroComponent', () => {
 
   });
 
-
-    
-   /* const expectedEquipe: Equipe[] = [{
-      id:1,
-      nome: "A"
-    }];
-    httpClientSpy.get.and.returnValue(asyncData(expectedEquipe));
-    equipeService.listar().subscribe({
-      next: equipes =>{
-        expect(equipes)
-        .withContext("expected pessoas")
-        .toEqual(expectedEquipe);
-        done();
-      }, error: done.fail
-    });
-    expect(httpClientSpy.get.calls.count())
-    .withContext('one call')
-    .toBe(1);*/
-
-
   it('onSubmit()',()=>{
     
     var form = {
